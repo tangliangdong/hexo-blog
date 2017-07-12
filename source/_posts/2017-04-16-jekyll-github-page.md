@@ -5,7 +5,7 @@ subtitle:   "github静态博客搭建"
 date:       2017-4-16 22:50:00
 author:     "Tang"
 header-img: "img/betahouse-new-live.jpg"
-catalog:    true
+category:   Learn
 tags:
     - jekyll
     - github
@@ -33,7 +33,7 @@ tags:
 
 而且每次推送到github上都会在github上有记录
 
-![](../../../../img/jekyll-github-page/9.png)
+![](9.png)
 
 像盖房子一样，是不是很有成就感。
 
@@ -51,7 +51,7 @@ github Pages可以被认为是用户编写的、托管在github上的静态网�
 
 #### 先在github上新建一个仓库
 
-![新建博客的仓库](../../../../img/jekyll-github-page/1.png)
+![新建博客的仓库](1.png)
 
 该仓库的名称要遵守github pages的命名规范,假如你的博客用户名是tangliangdong,那么你的仓库就要命名成 `tangliangdong.github.io`，而且如若你的博客没绑定域名，则默认就是这个域名`tangliangdong.github.io`，其实也还不错。
 
@@ -59,17 +59,17 @@ github Pages可以被认为是用户编写的、托管在github上的静态网�
 
 ##### clone到本地仓库
 
-![clone到本地](../../../../img/jekyll-github-page/3.png)
+![clone到本地](3.png)
 
 先在本地创建一个文件夹当做博客的根目录，命令行cd到博客的根目录 `git init` 初始化仓库。然后就可以克隆远程的仓库到本地。
 
-![clone到本地](../../../../img/jekyll-github-page/4.png)
+![clone到本地](4.png)
 
 ##### 或者本地连接到远程仓库
 
 命令行cd到博客的根目录,`git remote` 显示本地仓库连接的所有远程仓库。通过 `git remote add [remote-name] [url]` 添加github远程仓库。**remote-name** 是你给远程仓库取的名字，以后拉取和推送就用这个别名。
 
-![](../../../../img/jekyll-github-page/5.png)
+![](5.png)
 
  `git fetch [remote-name]`可以从远程仓库
 拉取最新的提交。
@@ -82,7 +82,7 @@ github Pages可以被认为是用户编写的、托管在github上的静态网�
 
 那么还有种办法，就是本地搭建jekyll环境，想看效果的时候 命令行cd到博客的根目录启动 `jekyll serve` 一下，再访问 *localhost:4000*，就在本地看到自己的博客。
 
-![我的博客](../../../../img/jekyll-github-page/2.png)
+![我的博客](2.png)
 
 接下来让我们来搭建下 *jekyll* 环境
 
@@ -104,7 +104,7 @@ github Pages可以被认为是用户编写的、托管在github上的静态网�
 
 如果自己会编写静态博客，可以自己来写，`jekyll new blogname` 来新建一个干净的博客。
 
-<img width="200px" src="../../../../img/jekyll-github-page/great.png">
+<img width="200px" src="great.png">
 
 我的博客 就是把别人的博客主题clone过来，自己稍微修饰下，就直接上线了，这也是很方便的方式，不需要太多的精力，就能拥有自己的博客。
 
@@ -112,11 +112,28 @@ github Pages可以被认为是用户编写的、托管在github上的静态网�
 
 #### 看看博客的目录结构
 
-![](../../../../img/jekyll-github-page/6.png)
+![](6.png)
 
-1. **_config.yml** 整个博客的核心配置文件，保存配置数据。很多配置选项都可以直接在命令行中进行设置，2. **_includes** 你可以加载这些包含部分到你的布局或者文章中以方便重用，比如页面的头部、底部和导航，是可以重用的3. **_layouts**（布局）是包裹在文章外部的模板。4. **_posts** 这里放的就是你的文章了。文件格式很重要，5. **_site** 一旦 Jekyll 完成转换，就会将生成的页面放在这里（默认）。最好将这个目录放进你的 .gitignore 文件中。会把css和img文件夹都放进去
+1. **_config.yml** 整个博客的核心配置文件，保存配置数据。很多配置选项都可以直接在命令行中进行设置，
+2. **_includes** 你可以加载这些包含部分到你的布局或者文章中以方便重用，比如页面的头部、底部和导航，是可以重用的
+3. **_layouts**（布局）是包裹在文章外部的模板。
+4. **_posts** 这里放的就是你的文章了。文件格式很重要，
+5. **_site** 一旦 Jekyll 完成转换，就会将生成的页面放在这里（默认）。最好将这个目录放进你的 .gitignore 文件中。会把css和img文件夹都放进去
 6. **404.html** 找不到路径时显示的页面
-7. **about.html** 个人介绍页面6. **CNAME** 为你的博客绑定自有域名的文件，只要在里面输入你要绑定的域名就行了。7. **css** 博客所有的css样式文件8. **feed.xml**9. **fonts** 博客的字体10. **Gruntfile.js** 11. **img** 博客的图片12. **index.html**13. **js**14. **less**15. **LICENSE**16. **package.json** 需要的包17. **README.md** 项目的英文介绍18. **README.zh.md** 项目的中文介绍
+7. **about.html** 个人介绍页面
+6. **CNAME** 为你的博客绑定自有域名的文件，只要在里面输入你要绑定的域名就行了。
+7. **css** 博客所有的css样式文件
+8. **feed.xml**
+9. **fonts** 博客的字体
+10. **Gruntfile.js** 
+11. **img** 博客的图片
+12. **index.html**
+13. **js**
+14. **less**
+15. **LICENSE**
+16. **package.json** 需要的包
+17. **README.md** 项目的英文介绍
+18. **README.zh.md** 项目的中文介绍
 
 基本都不需要动，只需要最开始改改`_config_yml`，把需要的图片放到 `img` 里面，然后在 `_posts` 文件夹里写文章就行了。
 
@@ -157,7 +174,7 @@ tags:                                    # 此博客的标签
 
 有个注意点 因为最后显示的页面都是在 `_site` 文件夹里面，引用图片的时候有个路径的问题。
 
-![](../../../../img/jekyll-github-page/8.png)
+![](8.png)
 
 需要写成这样，才能正确获取到图片。
 
@@ -190,7 +207,7 @@ origin 是你给远程仓库起的名字，master 代表的是远程仓库的一
 
 写博客 不仅可以很好地整理自己的思路，还能很好的记录下来，自己以后忘记的话，还能随时翻看。
 
-<img width="200px" src="../../../../img/jekyll-github-page/jiayou.png">
+<img width="200px" src="jiayou.png">
 
 祝大家都能拥有属于自己的博客。
 

@@ -2,15 +2,12 @@
 layout:     post
 title:      "freemarker自动生成java、jsp"
 date:       2017-3-16 21:00:00
-author:     "Tang"
-header-img: "img/freemarker.jpg"
-catalog:    true
+description: "FreeMarker是一个模板引擎，一个基于模板生成文本输出的通用工具，使用纯Java编写 "
+category:   Learn
 tags:
     - java
     - freemarker
 ---
-
-# freemarker自动生成java文件
 
 ### 什么是freemarker?
 
@@ -235,7 +232,7 @@ public class ${POJO}Service {
 
 **生成的效果图** 
 
-![img](../../../../img/freemarker/1.png)
+![img](1.png)
 
 ### 数字格式化插值
 

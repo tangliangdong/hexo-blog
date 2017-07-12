@@ -3,23 +3,21 @@ layout:     post
 title:      "ionic side menu"
 subtitle:   "ionic2 beta@37 侧滑导航制作"
 date:       2016-08-30 11:00:00
-author:     "Tang"
-header-img: "img/ionicsidemenu.jpg"
-catalog:    true
+description: "内有侧滑效果图👉👉👉"
+category:   Learn
 tags:
-    - ionic2
-    - side menu
+    - ionic
 ---
 
 ## 侧滑效果图
 
-![img](../../../../img/ionic-side-menu/ionic_side_menu2.png)
+![img](ionic_side_menu2.png)
 
 ## 目录结构
 
 我们需要如图所示的目录结构，其中我们需要的`app.html`、`app.ts`、`app.scss`需要放在`app`文件夹的下，
 
-![img](../../../../img/ionic-side-menu/ionic_side_menu3.jpg)
+![img](ionic_side_menu3.jpg)
 
 ## app.html
 

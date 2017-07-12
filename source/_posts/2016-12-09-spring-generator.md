@@ -3,9 +3,8 @@ layout:     post
 title:      "Mybatis Generator逆向工具"
 subtitle:   "Generator配置Mysql使用方法"
 date:       2016-12-09 15:00:00
-author:     "Tang"
-header-img: "img/mybatis-generator.jpg"
-catalog:    true
+description: "由于Mybatis框架实现数据表的映射时，配置的代码比较复杂。Mybatis官方提供了generator插件，根据数据库来逆向生成映射文件，加快开发效率。"
+category:   Learn
 tags:
     - generator
     - 配置
@@ -17,13 +16,13 @@ tags:
 
 [Mybatis的Eclipse插件](https://marketplace.eclipse.org/content/mybatis-generator)
 
-![img](../../../../img/mybatis-generator/generator.jpg)
+![img](generator.jpg)
 
 ### 新建 generatorConfig.xml
 
 在项目下的`src`文件夹下右键`new`一个`generatorConfig.xml`
 
-![img](../../../../img/mybatis-generator/generator2.jpg)
+![img](generator2.jpg)
 
 ### generatorConfig.xml 配置
 
@@ -57,7 +56,7 @@ tags:
 
 直接在generatorConfig.xml上右键，如图所示的选项，点击运行，即可自动生成映射。
 
-![img](../../../../img/mybatis-generator/generator3.jpg)
+![img](generator3.jpg)
 
 
 

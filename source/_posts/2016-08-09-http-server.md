@@ -5,7 +5,7 @@ subtitle:   "基于nodejs的轻量级服务器"
 date:       2016-08-09 13:00:00
 author:     "Tang"
 header-img: "img/http-server.jpg"
-catalog:    true
+category:   Learn
 tags:
     - http-server
     - 配置

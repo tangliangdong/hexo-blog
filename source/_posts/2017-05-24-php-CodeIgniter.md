@@ -3,9 +3,8 @@ layout:     post
 title:      "php CodeIgniter框架"
 subtitle:   "使用注意点"
 date:       2017-5-23 22:00:00
-author:     "Tang"
-header-img: "img/php-codeIgniter.jpg"
-catalog:    true
+description: "这个框架具有mvc的思想，而且方法的url映射的方式很想java spring mvc。"
+category:   Learn
 tags:
     - php
     - CodeIgniter
@@ -13,7 +12,7 @@ tags:
 
 ### CodeIgniter框架
 
-> 这个框架具有mvc的思想，而且方法的url映射的方式很想java spring mvc。
+> 这个框架具有mvc的思想，而且方法的url映射的方式很类似java spring mvc。
 
 具体查看可以[CodeIgniter文档](http://codeigniter.org.cn/user_guide)
 
@@ -23,7 +22,7 @@ tags:
 
 如何在页面中使用配置文件中设置的静态文件路径和访问的url，先找到CodeIgniter根目录下 *application->config->config.php*
 
-![](../../../../img/php-codeIgniter/1.png)
+![](1.png)
 
 里面的base_url是自带的，这是在引入静态文件时用的，我们还可以再加入一个`site_url`配置，用来在提交表单或者ajax异步提交数据时url的根路径。
 

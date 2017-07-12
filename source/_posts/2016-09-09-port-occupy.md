@@ -5,7 +5,7 @@ subtitle:   "关闭有冲突的端口程序"
 date:       2016-09-09 11:00:00
 author:     "Tang"
 header-img: "img/port-occupy.jpg"
-catalog:    true
+category:   Learn
 tags:
     - 端口
 ---
@@ -18,7 +18,7 @@ tags:
 
 我们可以打开命令行，输入`netstat -ano`查看所有端口的占用情况
 
-![img](../../../../img/port-occupy/port.jpg)
+![img](port.jpg)
 
 比如我们要使用8100的端口号，我们就需要先找到占用这个端口号的程序，然后再将其关闭，
 
@@ -28,26 +28,26 @@ tags:
 
 我们也可以输入`netstat -aon|findstr "8100"`来查看对应的PID为5996。
 
-![img](../../../../img/port-occupy/port1.jpg)
+![img](port1.jpg)
 
 ### tasklist|findstr "PID"
 
 输入`tasklist|findstr "5996"`查看占用该端口的程序是什么。
 
-![img](../../../../img/port-occupy/port2.jpg)
+![img](port2.jpg)
 
 ### taskkill /f /t /im 程序名称
 
 输入 `taskkill /f /t /im node.exe`结束该程序。
 
-![img](../../../../img/port-occupy/port3.jpg)
+![img](port3.jpg)
 
 ### 通过任务管理器关闭程序
 
 知道程序的PID之后我们通过PID在任务管理器中找到这个程序然后结束他。
 
 
-![img](../../../../img/port-occupy/port4.jpg)
+![img](port4.jpg)
 
 
 

@@ -1,23 +1,22 @@
 ---
 layout:     post
 title:      "浅谈响应式"
-subtitle:   "制作响应式网站的一些经验"
 date:       2016-08-10 11:00:00
-author:     "Tang"
-header-img: "img/self-adapter.jpg"
-catalog:    true
+description: ""
+category:   Learn
 tags:
     - 响应式
-    - 经验
 ---
 
 ## 响应式网站概念
 
- - 1. flexible grid layout 弹性网格布局
+ 1. flexible grid layout 弹性网格布局
 
- - 2. flexible image 弹性图片
+ 2. flexible image 弹性图片
 
- - 3. media queries 媒体查询
+ 3. media queries 媒体查询
+
+ <!--more-->
 
 ## 首先
 
@@ -116,7 +115,7 @@ Modernizr：专为HTML5和CSS3开发的功能检测类库。
 
 我们可以在官网下载我们需要检测的属性。
 
-![image](../../../../img/self-adapter/self-adapter.jpg)
+![image](self-adapter.jpg)
 
 比如我们需要检测`SVG`，我们就可以下载并保存到本地的`js`文件中，并在`html`中引入，如果浏览器不支持这个属性，就会自动在`<html></html>`标签上加上`class="no-svg"`,
 
@@ -150,7 +149,7 @@ Modernizr：专为HTML5和CSS3开发的功能检测类库。
 
 我们只需要将我们需要查询标签或属性输入就行，
 
-![image](../../../../img/self-adapter/caniuse.jpg)
+![image](caniuse.jpg)
 
 #### 推荐框架
 

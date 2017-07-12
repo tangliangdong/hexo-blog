@@ -2,43 +2,40 @@
 layout:     post
 title:      "window配置maven和spring环境"
 date:       2016-07-16 13:00:00
-author:     "Tang"
-header-img: "img/spring.jpg"
-catalog:    true
+description: "Maven是一个强大的项目管理工具，其构建特性被普遍用于项目管理，Maven本身也是由Java所开发，它的出现给项目管理带来了极大的方便，告别了手动构建的时代"
+category: Learn
 tags:
     - maven
     - spring
     - 配置
 ---
 
-# maven 本地环境配置和spring配置
-
 ## 1. [maven官网](https://maven.apache.org/download.cgi)
 下载maven压缩包
 
-![image](../../../../img/maven-spring-img/maven1.jpg)
+![image](maven1.jpg)
 
 ## 2. 解压到你要放置的地方，并配置环境变量
 
 先将解压后的根目录路径配置到变量名为 `MAVEN_HOME` 
-![image](../../../../img/maven-spring-img/maven2.jpg)
+![image](maven2.jpg)
 再定位到该路径下的bin文件夹，并将其配置到`Path`变量，`%MAVEN_HOME%\bin`
-![image](../../../../img/maven-spring-img/maven3.jpg)
+![image](maven3.jpg)
 
 ## 3. 新建两个文件夹
 一个`repo`当做本地仓库，一个`proj`用来放置项目
 
 ## 4. 连接maven和本地仓库`repo`
 进入之前解压的maven包下的conf文件夹
-![image](../../../../img/maven-spring-img/maven4.jpg)
+![image](maven4.jpg)
 
 打开`settings.xml`文件
 
-![image](../../../../img/maven-spring-img/maven5.jpg)
+![image](maven5.jpg)
 
 我们需要maven标记我们本地仓库`repo`的位置，但这一行被注释了，我们需要把他放出来，并换上repo的绝对路径
 
-![image](../../../../img/maven-spring-img/maven6.jpg)
+![image](maven6.jpg)
 
 ## 5. 从maven远程仓库下载资源
 打开win命令行，`cd`到`proj`然后创建项目文件夹，此处以`blog`为例，然后在命令行输入以下代码
@@ -211,10 +208,10 @@ tags:
 
 到`proj\blog\src\main`下,创建java的文件夹之后就会有如下所示的大致结构，
 
-![image](../../../../img/maven-spring-img/maven7.jpg)
+![image](maven7.jpg)
 
 之后构建`proj\blog\src\main\java\com\itbegin`这样的路径，在这个目录下可以放置如下的文件夹
-![image](../../../../img/maven-spring-img/maven8.jpg)
+![image](maven8.jpg)
 
 ## 6. 启动内置的Tomcat
 打开命令行，进入blog项目的根目录，输入`clean tomcat7:run`,便会自动下载以及启动Tomcat,在网址中输入`localhost:8080`即可访问

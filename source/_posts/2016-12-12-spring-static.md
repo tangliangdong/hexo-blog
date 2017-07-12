@@ -5,10 +5,9 @@ subtitle:   ".css,.js,.jpg,.png"
 date:       2016-12-12 16:00:00
 author:     "Tang"
 header-img: "img/spring-static.jpg"
-catalog:    true
+category:   Learn
 tags:
     - spring
-    - 经验
 ---
 
 当我们使用视图解析器，将所有的url都分配到`dispatcher-servlet`处理，因此连`.css,.js.jpg`等文件都一并分配到这里去了，自然就获取不到这些静态资源。
@@ -51,7 +50,7 @@ tags:
 <mvc:resources location="/resources/" mapping="/resources/**"/>
 ```
 
-![img](../../../../img/spring-static/spring_static.jpg)
+![img](spring_static.jpg)
 
 ### jsp页面引入静态资源
 

@@ -2,18 +2,13 @@
 layout:     post
 title:      "spring返回json对象"
 date:       2017-3-10 21:00:00
-author:     "Tang"
-header-img: "img/java-returnJson.jpg"
-catalog:    true
+category:   Learn
 tags:
-    - java
     - spring
     - json
 ---
 
-# spring 后台返回json数据对象
-
-##### 一般用在ajax访问后台数据，不刷新页面更新部分页面数据。
+ 一般用在ajax访问后台数据，不刷新页面更新部分页面数据。
 
 > 在 `@RequestMapping` 中设置 `produces="application/json"`
 > 表示将返回的Object的数据转换成JSON对象再返回给客户端。

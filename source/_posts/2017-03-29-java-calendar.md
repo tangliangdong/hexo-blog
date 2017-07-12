@@ -2,8 +2,8 @@
 layout:     post
 title:      "Calendar用法"
 date:       2017-3-28 20:00:00
-author:     "Tang"
-header-img: "img/java-calendar.jpg"
+description: "运用calendar加减日期<br>可以很方便的避免 因每月日期以及闰年日期不同的而产生的逻辑运算<br>"
+category:   Learn
 tags:
     - java
     - Calendar

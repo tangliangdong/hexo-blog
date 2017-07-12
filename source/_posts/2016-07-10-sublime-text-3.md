@@ -2,16 +2,12 @@
 layout:     post
 title:      "sublime text 3 插件分享"
 date:       2016-07-10 16:00:00
-author:     "Tang"
-header-img: "img/post-bg-js-module.jpg"
-catalog:    true
+description: "提高效率的Sublime Text 3插件"
+category: Learn
 tags:
     - sublime
     - 插件
-    - 分享
 ---
-
-# Sublime Text 3 分享
 
 ## 提高效率的Sublime Text 3插件
 
@@ -59,20 +55,20 @@ FCCC7561 8A4A1741 68FA4223 ADCEDE07
 使用仿CSS选择器的语法来生成代码，大大提高了HTML/CSS代码编写的速度。本人认为最能提高效率的Sublime Text插件。
 在html文件开头输入`！` + `Tab键`
 
-![image](../../../../img/sublime-text-3-img/Emmet.jpg)
+![image](Emmet.jpg)
 
 [Emmet语法][]
 
 我在Mac上安装的emmet插件的时候，有遇到过嵌套表达时 tab键失效的情况，
 
-![image](../../../../img/sublime-text-3-img/emmet1.png)
+![image](emmet1.png)
 
  - 要先确定你的编译环境是html
  - 还可能是pyv8的问题，由于Emmet插件需要pyv8插件，你需要戳 👉👉👉[这里](https://github.com/emmetio/pyv8-binaries) 下载zip。然后解压到sublime的在Packages目录下
 
 在页面的最下方👇👇👇 选择你sublime的版本，以及电脑的版本。 
 
-![image](../../../../img/sublime-text-3-img/emmet2.png)
+![image](emmet2.png)
 
 然后重启sublime 就可以了。
 
@@ -86,11 +82,11 @@ CssComb是为CSS属性进行排序和格式化插件
 使用方法，编辑窗口直接右键 单击 Run CSScomb，或者 `Ctrl`+`Shift`+`C`，
 编辑前后的对比
 
-<!-- ![image](../../../../img/sublime-text-3-img/CSScomb1.jpg)
-![image](../../../../img/sublime-text-3-img/CSScomb2.jpg) -->
+<!-- ![image](CSScomb1.jpg)
+![image](CSScomb2.jpg) -->
 
-<img src="../../../../img/sublime-text-3-img/CSScomb1.jpg" style="display: inline-block;" width="260px" alt="">
-<img src="../../../../img/sublime-text-3-img/CSScomb2.jpg" style="display: inline-block;" width="260px" alt="">
+<img src="CSScomb1.jpg" style="display: inline-block;" width="260px" alt="">
+<img src="CSScomb2.jpg" style="display: inline-block;" width="260px" alt="">
 
 ### 3. Autoprefixer
 
@@ -102,29 +98,29 @@ CssComb是为CSS属性进行排序和格式化插件
 
 使用方法：在输入CSS3属性后（冒号前）按Tab键
 
-![image](../../../../img/sublime-text-3-img/autoprefixer.gif)
+![image](autoprefixer.gif)
 <!-- <img src="https://github.com/tangliangdong/Sublime-Text-3/blob/master/images/autoprefixer.gif" width="300px" alt="">
  -->
 或者 按 `Ctrl`+ `Shift` + `P`，然后选 `Autoprefix CSS` 或者设置键盘快捷键 – `Preferences > Key Bindings – User`
 
-![image](../../../../img/sublime-text-3-img/autoprefix1.jpg)
+![image](autoprefix1.jpg)
 
 ### 4. ColorPicker
 
 通常，如果你想使用一个颜色选择器则可能打开 Photoshop 或 GIMP。而在 Sublime Text 中，你可以使用内置的颜色选择器。安装完成后，只要按下`Ctrl / Cmd + Shift + C`快捷键。
 
-![image](../../../../img/sublime-text-3-img/colorpicker1.jpg)
+![image](colorpicker1.jpg)
 
 >当然这里和之前的CSScomb 快捷键冲突了，
 我们需要打开菜单中的 `preferences`-> `Browse Packages` 进入插件安装目录，打开ColorPicker文件夹，
 
-![image](../../../../img/sublime-text-3-img/colorpicker.jpg)
+![image](colorpicker.jpg)
 
 对应自己电脑的操作系统进入相应的文件进行设置。
 
 本人的是window笔记本，因此打开 `Default (Windows)` 文件，如图
 
-![image](../../../../img/sublime-text-3-img/colorpicker_setting.jpg)
+![image](colorpicker_setting.jpg)
 
 将`ctrl+shift+c` 改为 `ctrl+shift+d` 即可，当然也可以改成其他的，但是必须避免和其他的快捷键产生冲突。
 
@@ -144,13 +140,13 @@ OmniMarkupPreviewer用来预览markdown 编辑的效果，同样支持渲染代�
 Color Highlighter这个插件会检测CSS文件中的颜色码，不论是Hex码或者RGB码都能很好的显示。
 再选中颜色码时会显示颜色。
 
-![image](../../../../img/sublime-text-3-img/colorhighlighter.jpg)
+![image](colorhighlighter.jpg)
 
 为让Color Highlighter能够设置成用背景色或者边框提示颜色，我一般在Settings里做这样的设置：
 
-![image](../../../../img/sublime-text-3-img/colorhighlighter3.jpg)
+![image](colorhighlighter3.jpg)
 
-![image](../../../../img/sublime-text-3-img/colorhighlighter2.jpg)
+![image](colorhighlighter2.jpg)
 
 不需要选中就可以显示颜色码的颜色。
 
@@ -163,7 +159,7 @@ Color Highlighter这个插件会检测CSS文件中的颜色码，不论是Hex码
 JQuery代码提示
 输入 `ajax` + `Tab`，就会产生图示框架，很方便
 
-![image](../../../../img/sublime-text-3-img/JQuery.jpg)
+![image](JQuery.jpg)
 
 ### 9. ConvertToUTF8
 

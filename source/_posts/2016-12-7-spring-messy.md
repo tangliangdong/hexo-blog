@@ -4,10 +4,9 @@ title:      "spring 解决乱码"
 date:       2016-12-07 14:30:00
 author:     "Tang"
 header-img: "img/spring-messy.jpg"
-catalog:    true
+category:   Learn
 tags:
     - spring
-    - 经验
 ---
 
 ### request.getParameter()乱码问题

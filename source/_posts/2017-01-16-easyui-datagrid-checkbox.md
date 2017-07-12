@@ -2,12 +2,10 @@
 layout:     post
 title:      "easyui datagrid复选框选择记录"
 date:       2017-01-16 22:00:00
-author:     "Tang"
-header-img: "img/easyui-datagrid-checkbox.jpg"
-catalog:    true
+description: "easyui通过复选框选择记录的不同情况"
+category:   Learn
 tags:
     - easyui
-    - datagrid
 ---
 
 ### easyui通过复选框选择记录的不同情况
@@ -105,3 +103,4 @@ tags:
 ```
 
 > 初次上手被easyui坑过好多次，虽然界面不好看，但是能够很方便的实现一些前台展示后台数据的方法，比较适合做后台管理系统之类的。
+

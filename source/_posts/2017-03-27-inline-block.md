@@ -2,19 +2,18 @@
 layout:     post
 title:      "display: inline-block的小问题"
 date:       2017-3-26 20:00:00
-author:     "Tang"
-header-img: "img/inline-block.jpg"
-catalog:    true
+toc:        true
+description: "同行inline-block相互影响"
+category:   Learn
 tags:
     - css
-
 ---
 
 ###  一、同行inline-block相互影响
 
 当两个inline-block元素同行显示时，可能会出现基准为bottom的情况，所以当两边内容不同时，就会出现问题！
 
-![img](../../../../img/inline-block/1.png)
+![img](1.png)
 
 很容易就发现，几个div的对齐方式：
 
@@ -74,7 +73,7 @@ tags:
 
 ### 二、去除inline-block元素间的间距
 
-![](../../../../img/inline-block/2.png)
+![](2.png)
 
 ```html
 <div>
@@ -149,15 +148,15 @@ tags:
 
 ```
 
-![](../../../../img/inline-block/3.png)
+![](3.png)
 
 就算一样的几个元素水平排列，也会出现间隙不同的情况，测试还发现一个很奇怪的情况：在chrome的缩放级别到 150% 的时候，竟然水平元素的间隙都一起消失了，而且不多不少刚好。
 
-![](../../../../img/inline-block/5.png)
+![](5.png)
 
 > firefox和chrome一样，缩放级别不同，元素之间的间隙也不同。
 
-![](../../../../img/inline-block/4.png)
+![](4.png)
 
 唯独就safari显示正常了，缩放多少也还是正常的。
 

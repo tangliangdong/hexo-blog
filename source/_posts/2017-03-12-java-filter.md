@@ -3,15 +3,12 @@ layout:     post
 title:      "spring Filter过滤器"
 subtitle:   "拦截未登录用户"
 date:       2017-3-11 01:00:00
-author:     "Tang"
-header-img: "img/java-filter.jpg"
-catalog:    true
+description: "Hello Spring Filter"
+category:   Learn
 tags:
     - spring
     - Filter
 ---
-
-# spring Filter过滤器
 
 ### web.xml
 

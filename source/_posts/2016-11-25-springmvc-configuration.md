@@ -5,7 +5,7 @@ subtitle:   "springMVC和mybatis整合"
 date:       2016-11-25 23:00:00
 author:     "Tang"
 header-img: "img/springmvc-configuration.jpg"
-catalog:    true
+category:   Learn
 tags:
     - spring
     - 配置

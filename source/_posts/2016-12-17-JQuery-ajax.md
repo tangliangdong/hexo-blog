@@ -1,11 +1,8 @@
 ---
 layout:     post
 title:      "JQuery ajax提交form表单"
-subtitle:   ".serialize()"
 date:       2016-12-17 22:00:00
-author:     "Tang"
-header-img: "img/jquery-ajax.jpg"
-catalog:    true
+category:   Learn
 tags:
     - spring
     - jQuery
@@ -34,6 +31,8 @@ tags:
   </ul>
 </form>
 ```
+
+<!--more-->
 
 只需要在`ajax`的data属性里加上`$(formid).serialize()`，
 
@@ -65,3 +64,4 @@ $('#btn').click(function(event) {
         //......
     }
 ```
+

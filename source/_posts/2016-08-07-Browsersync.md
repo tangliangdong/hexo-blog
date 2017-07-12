@@ -1,18 +1,14 @@
 ---
 layout:     post
 title:      "配置Browsersync"
-subtitle:   "多浏览器多终端同时进行调试的工具"
 date:       2016-08-08 22:00:00
-author:     "Tang"
-header-img: "img/browsersync.png"
-catalog:    true
+description: "多浏览器多终端同时进行调试的工具"
+category: Learn
 tags:
     - browsersync
     - 配置
     - npm
 ---
-
-# Browsersync 简单配置
 
 Browsersync是用于多浏览器多终端同时进行调试的工具，简单易用。
 [Browsersync](http://http://www.browsersync.cn/)官网也有详细的讲解。
@@ -46,3 +42,4 @@ Browsersync是用于多浏览器多终端同时进行调试的工具，简单易
 之前启动browsersync时出现错误的问题，在询问老师后，得到了解决。
 
 需要在环境变量的`Path`后加上`C:\Windows\System32\`，之后browsersync就能正常启动了，功能还是非常强大的。
+

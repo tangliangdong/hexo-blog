@@ -3,13 +3,11 @@ layout:     post
 title:      "Spring mybatis一对多表查询"
 subtitle:   "mybatis高级映射"
 date:       2016-12-19 22:10:00
-author:     "Tang"
-header-img: "img/spring-static.jpg"
-catalog:    true
+description: "要么追随我，要么引领我，不然就给我滚"
+category:   Learn
 tags:
     - spring
     - mybatis
-    - 经验
 ---
 
 比如用户和活动的关系，一个用户可以参加多个活动，一个活动允许多个用户参加，虽然这是多对多的关系，但是实际应用中，基本用到的是一对多，如果用户需要查看自己参与的活动，那用户就只有一个，但活动有多个。
@@ -18,15 +16,15 @@ tags:
 
 **用户表**
 
-![img](../../../../img/spring-mybatis/spring-mybatis1.jpg)
+![img](spring-mybatis1.jpg)
 
 **活动表**
 
-![img](../../../../img/spring-mybatis/spring-mybatis2.jpg)
+![img](spring-mybatis2.jpg)
 
 **用户参与活动表**
 
-![img](../../../../img/spring-mybatis/spring-mybatis3.jpg)
+![img](spring-mybatis3.jpg)
 
 ### 用户活动数据类型
 

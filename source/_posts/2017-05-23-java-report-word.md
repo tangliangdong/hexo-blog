@@ -5,11 +5,10 @@ subtitle:   "在word中引入图片"
 date:       2017-5-22 13:00:00
 author:     "Tang"
 header-img: "img/java-report-word.jpg"
-catalog:    true
+category:   Learn
 toc: true
 tags:
     - word
-    - doc
     - java
     - freemarker
 ---
@@ -28,7 +27,7 @@ tags:
 <w:binData w:name="wordml://02000004.png">${item.problemImg}</w:binData>
 ```
 
-![](../../../../img/java-report-word/1.png)
+![](1.png)
 
 ### 制作freemarker模板
 
@@ -40,7 +39,7 @@ tags:
 
 然后打开菜单栏里的 **Selection->Format->Indent XML**,如下图
 
-![](../../../../img/java-report-word/2.png)
+![](2.png)
  
 不然代码全部堆在一起根本不能看，格式化代码可以极大的提高效率。
 
@@ -50,7 +49,7 @@ tags:
 
 如果制作的word模板里有图片的话，那导出的xml文件里会有如下图大片的乱码
 
-![](../../../../img/java-report-word/3.png)
+![](3.png)
 
 直接将这片代码换成freemarker的标记：
 

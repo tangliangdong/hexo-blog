@@ -2,12 +2,10 @@
 layout:     post
 title:      "spring mvc控制器映射"
 date:       2016-11-24 19:30:00
-author:     "Tang"
-header-img: "img/springmvc.jpg"
-catalog:    true
+
+category:   Learn
 tags:
     - spring
-    - 经验
 ---
 
 ### spring映射
@@ -37,7 +35,7 @@ public class BlogController {
 - 超链接地址`href`要对应控制器的映射地址`@RequestMapping("/blog")`，这样才会调用映射的方法。
 - `ModelAndView mav = new ModelAndView("blog/blogs")`或者`mav.setViewName("blog/blogs")`都能用来设置显示 **blog文件夹** 下的`blogs.jsp`页面。
 
-![image](../../../../img/springmvc/springmvc1.jpg)
+![image](springmvc1.jpg)
 
 因为在`dispatcher-servlet.xml`中配置过视图解析器如下
 
@@ -58,7 +56,7 @@ public class BlogController {
 
 如下图，如果我要点击删除一条记录，然后再跳回这个页面。就需要用到请求重定向。
 
-![image](../../../../img/springmvc/springmvc2.jpg)
+![image](springmvc2.jpg)
 
 ```java
 @RequestMapping(value = "delete/{id}",method = RequestMethod.GET)

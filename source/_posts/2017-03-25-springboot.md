@@ -2,11 +2,9 @@
 layout:     post
 title:      "springboot框架模板"
 date:       2017-3-24 01:50:00
-author:     "Tang"
-header-img: "img/baidu-map.jpg"
-catalog:    true
+description: "Hello SpringBoot"
+category:   Learn
 tags:
-    - spring
     - springboot
 ---
 
@@ -14,7 +12,7 @@ tags:
 
 ### 模板的目录结构
 
-![](../../../../img/springboot/1.png)
+![](1.png)
 
  - 第一个 
     - `Application.java` *springboot* 的主程序，启动的入口

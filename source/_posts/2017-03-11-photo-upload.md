@@ -2,15 +2,11 @@
 layout:     post
 title:      "spring图片上传"
 date:       2017-3-10 20:00:00
-author:     "Tang"
-header-img: "img/photo-upload.jpg"
-catalog:    true
+description: "..."
+category:   Learn
 tags:
-    - java
     - spring
 ---
-
-# spring 图片上传
 
 ### html
 

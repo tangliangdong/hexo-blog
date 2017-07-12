@@ -3,16 +3,16 @@ layout:     post
 title:      "配置gulp"
 subtitle:   "基于流的自动化构建工具"
 date:       2016-08-09 20:00:00
-author:     "Tang"
-header-img: "img/gulp.jpg"
-catalog:    true
+toc: true
+description: "基于流的自动化构建工具"
+category:   Learn
 tags:
     - gulp
     - 配置
     - npm
 ---
 
-# 介绍 [gulp](http://www.gulpjs.com.cn/)
+## 介绍 [gulp](http://www.gulpjs.com.cn/)
 
 这里通过`gulp`实现的功能比较简单，就是将项目打包发布，因为通过`http`请求获得很多小文件的效率不如请求一个大文件，所以我们可以将所有的`css`和`js`文件进行合并。
 
@@ -39,7 +39,7 @@ npm install gulp-rev gulp-rev-replace gulp-useref gulp-filter gulp-uglify gulp-c
 ```
 下载所需的插件。
 
-![package.json](../../../../img/gulp/gulp1.jpg)
+![package.json](gulp1.jpg)
 
 安装的插件都会添加到`package.json`的生产环境中。
 

@@ -3,15 +3,14 @@ layout:     post
 title:      "jQuery给服务端生成的DOM绑定事件"
 subtitle:   "each()遍历JQuery对象"
 date:       2016-12-19 18:10:00
-author:     "Tang"
-header-img: "img/jquery-memo.jpg"
-catalog:    true
+category:   Learn
 tags:
     - jQuery
-    - 经验
 ---
 
 通过服务端传过来的Model生成的DOM元素，因为可能会有多个按钮，如果通过设置id值来获取按钮，则只会有第一个带这个id值的按钮绑上指定的事件，其他按钮则没有。
+
+<!--more-->
 
 ```html
 <table class="table table-hover">
