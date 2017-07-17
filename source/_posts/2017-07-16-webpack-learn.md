@@ -2,6 +2,7 @@
 title: webpack 3.3.0 学习小记
 date: 2017-07-16 20:43:33
 category: Learn
+toc: true
 tags:
     - webpack 
 ---
@@ -63,7 +64,15 @@ path.resolve(__dirname, 'dist')
 | [filebase] | 模块的basename |
 | [query] | 模块的query |
 
+
+-------
+
+webpack插件 plugin
+
 ```
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CleanPlugin = require('clean-webpack-plugin');
+
 module.exports = {
     entry: {
         index: './src/index.js',
@@ -73,6 +82,7 @@ module.exports = {
     plugins: [
         // 可以将确定的第三方文件都打包到主入口文件中，
         // 这样就不需要在别的模块引入公用的文件。例如jquery
+        // 在entry（入口） vendor中加入公用的第三方文件的名称
         new webpack.optimize.CommonsChunkPlugin({
             name: ["vendor"],
             minChunks: 2,
@@ -101,6 +111,8 @@ module.exports = {
     ],
 }
 ```
+
+
 
 -------
 
@@ -225,6 +237,25 @@ module.exports = {
 * [html-loader](https://www.npmjs.com/package/html-loader)
 
 
+-------
+
+### require.ensure() 按需加载
+
+`require.ensure(dependencies: String[], callback: function(require), errorCallback: function(error), chunkName: String)`
+
+有些组件不是一开始就需要的，而且一开始就加载会影响加载速度，影响用户体验，因此我们可以使用按需加载的形式，等需要了再通过ajax将模块加载进来。
+
+> 之前很多博客提到第三个参数是设定块的名称，但实际上在新版本使用时，第四个参数才是设定块(chunk)的名称。
+
+```js
+require.ensure([], () => {
+    // 引入Button组件
+    const Button = require('./Components/Button');
+    const button = new Button('google.com');
+
+    button.render('a');
+}, () => {}, 'button');
+```
 
 
 
