@@ -80,7 +80,7 @@ public String login(HttpServletRequest req, HttpServletResponse res) {
 }
 ```
 
-### 一般做法
+#### 一般做法
 
 一般的解决方式就是配置一个Filter过滤器，将需要跨域的请求拦截下来，给请求头加上必要信息。
 
@@ -125,5 +125,6 @@ public class myCORSFilter implements Filter {
 这样设置之后ajax不需要修改，直接请求就行了，fetch也一样，甚至不需要额外设置header，就能正常请求到服务器的数据。
 
 设置服务器CORS的方式对前后端的代码改动较少，且相对jsonp来说支持POST提交的方式，是一种很好的解决跨域问题的解决方式。
+
 
 

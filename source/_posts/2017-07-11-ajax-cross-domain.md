@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "ajax跨域请求"
-date:       2017-7-11 18:00:00
+date:       2017-8-5 23:00:00
 category:   Learn
 tags:
     - ajax
@@ -85,6 +85,28 @@ jQuery183014047024586768142_1499770090335({
     "id":1,
     "username":"admin"
 })
+```
+
+### react jsonp实现跨域请求
+
+```
+npm install fetch-jsonp
+```
+
+```js
+import fetchJsonp from 'fetch-jsonp';
+
+// 表单异步提交
+handleSubmit(e) {
+    fetchJsonp('http://localhost:9090/app/login?account=admin&passwd=123456')
+       .then(function(response) {
+         return response.json();
+       }).then(function(json) { // 转成json字符串
+         console.log('parsed json', json)
+       }).catch(function(ex) {
+         console.log('parsing failed', ex)
+       });
+}
 ```
 
 
