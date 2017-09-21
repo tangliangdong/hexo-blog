@@ -188,7 +188,9 @@ module.exports = {
      {
        loader: 'css-loader',
        options: {
-           importLoaders: 1,
+           modules: true, // 启动css模块
+           importLoaders: 1, // 在 css-loader 前应用的 loader 的数量
+           localIdentName: '[path][name]__[local]--[hash:base64:5]', // 配置生成的标识符
        }
      },
      {
@@ -235,7 +237,6 @@ module.exports = {
 }
 ```
 * [html-loader](https://www.npmjs.com/package/html-loader)
-
 
 -------
 
