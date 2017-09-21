@@ -85,4 +85,65 @@ export default class Index extends React.Component {
 }
 ```
 
+---
+
+### Route
+
+之后用React做主页跳转的详情页时，碰到一个问题：
+
+```
+<BrowserRouter>
+  <Switch>
+      <Route exact path="/" component={PCIndex}></Route>
+      <Route path="/details/:uniquekey" component={PCNewsDetail} />
+  </Switch>
+</BrowserRouter>
+```
+
+就这样的一个页面，在首页点击详情连接一直无法跳转。
+
+发现是如果不加 exact 这个参数，会把已 `/`这个开头的url全部匹配上，所有必须加上 `exact` 进行精确匹配。
+
+#### exact
+
+> 只会匹配和 location.pathname 完全相同的路径
+
+| path | location.pathname | exact | matches? |
+| --- | --- | --- | --- |
+| /one | /one/two | true | No |
+| /one | /one/two | false | Yes |
+
+#### strict
+
+> 如果path末尾有一个斜线，则会匹配到尾部的斜线为止，如果后面还有其他的url段，对后面的url段就不起作用了。
+
+| path | Location.pathname | mathces? |
+| --- | --- | --- |
+| /one/ | /one | No  |
+| /one/ | /one/ | Yes |
+| /one/ | /one/two | Yes  |
+
+---
+
+### 问题
+
+1. 用 `webpack-dev-server` 刷新子页面的时候 `http://localhost:8081/details/161028202106247`，页面会有404错误,
+
+可以在运行 `webpack-dev-server` 的时候后面加上参数 `--history-api-fallback`
+
+```
+// package.json
+
+"scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server --devtool eval --progress --colors --content-base build --history-api-fallback",
+    "test": "echo \"Error: no test specified\" && exit 1"
+},
+```
+
+> 直接在命令行在根目录运行 `npm run dev` 就可以运行 **package.json中预设的指令**
+
+
+
+
 
