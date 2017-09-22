@@ -56,7 +56,6 @@ export default class PCNewsImageBlock extends React.Component {
   // 继承自React.component 每个组件必须实现的方法
   render() {
     // inline style 采用驼峰(camelCased)写法
-    // 例如 background-color: backgroundColor
     // 通过表达式写入到标签里 style={styleImage}
     const styleImage = {
       display: 'block',
@@ -103,11 +102,19 @@ export default class PCNewsImageBlock extends React.Component {
 }
 ```
 
+### React 官方对 Inline Style 的 介绍
+
+1. 采用驼峰(camelCased)写法，对于 backgroundImage 渲染后成为 ` background-image`；
+2. 可以不用写 px 直接采用数字 1 取代 1px，React 会自动加上 px，有些 CSS 样式属性不会自动加上 px，请参考不会自动添加 px 的样式属性； WebkitTransition 和 msTransition 中，Webkit 和 ms
+3. 是 JS前缀(JavaScript prefix)，解决跨平台，更多参考Modernizr Prefixed;
+
 ### 组件化的优势
 
 1. 可扩展
 2. 可复用
 3. 高内聚/低耦合 - 我们无需关心该组件内部的实现细节
+
+> 部分借鉴自👉👉👉[使用 JS 写 CSS 与 React 内联样式](http://robinchen.me/tech/2016/08/09/tech-Refactor-CSS-into-JS.html)
 
 
 
