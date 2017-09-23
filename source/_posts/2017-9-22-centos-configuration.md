@@ -4,7 +4,7 @@ date: 2017-09-22 15:41:03
 toc: true
 category: Learn
 tags:
-    - centos
+    - 服务器
     - 配置
 ---
 
@@ -73,6 +73,7 @@ httpd.conf 需要修改一些地方
 ```
 # line 86: 改变管理员的邮箱地址
 ServerAdmin root@163.com
+
 # line 95: 改变域名信息
 ServerName www.tangliangdong.me:80
 ```
@@ -144,9 +145,6 @@ chkconfig vsftpd on  // 默认开启vsftpd 服务
 启动vsftpd 服务后，就可以通过ftp客户端进行登录。
 
 把我们的web站点上传到服务器的对应路径。
-
-
-
 
 ### 参考
 
