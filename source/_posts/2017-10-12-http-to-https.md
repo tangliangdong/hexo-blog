@@ -1,6 +1,7 @@
 ---
 title: apache http转换成https
 date: 2017-10-12 10:31:11
+category: Learn
 toc: true
 tags:
     - https
@@ -167,6 +168,24 @@ systemctl restart httpd
 
 既然配好了Https，自然就要用起来了，现在一般输入url，默认还是用http。
 
+如果只是某个域名跳转https，那么如下配置即可：
+
+```shell
+<VirtualHost *:80>
+    <Directory /var/www>
+        AllowOverride All
+    </Directory>
+    Serveradmin 18868748898@163.com
+    ServerName zzz.tangliangdong.me
+    DocumentRoot /var/www/
+    Redirect permanent / https://zzz.tangliangdong.me/
+</VirtualHost>
+```
+
+直接添加 `Redirect permanent / https://zzz.tangliangdong.me/` 这句即可实现,
+
+`http://zzz.tangliangdong.me` 跳转到 `https://zzz.tangliangdong.me`
+
 要用到Apache的 Rewrite
 
 ## 启用 `.htaccess`
@@ -189,10 +208,12 @@ systemctl restart httpd
 ```
 RewriteEngine On
 RewriteCond %{SERVER_PORT} 80  # 80端口都跳转
-#RewriteCond %{HTTP_HOST} ^zzz.tangliangdong.me [NC]  # 非zzz.tangliangdong.me都跳转
+#RewriteCond %{HTTP_HOST} ^zzz.tangliangdong.me [NC]  # zzz.tangliangdong.me都跳转
 #RewriteCond %{SERVER_PORT} !^443$  # 非443端口都跳转
 RewriteRule ^(.*)$ https://%{SERVER_NAME}/$1 [L,R=301]
 ```
+
+> `!` 放在最开头代表 **非** 的意思
 
 ### RewriteEngine
 
