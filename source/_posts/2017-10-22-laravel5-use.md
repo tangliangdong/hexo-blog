@@ -2,13 +2,15 @@
 title: laravel5.5 使用注意点
 date: 2017-10-22 13:14:10
 category: Learn
+description 'blade模板使用'
+toc: true
 tags: 
     - laravel
 ---
 
-<!-- more -->
+# laravel 5.5
 
-### 1. blade模板使用 @section
+## 1. blade模板使用 @section
 
 laravel自带有blade模板引擎，需在后缀前面加上 `.blade`
 
@@ -81,19 +83,19 @@ laravel自带有blade模板引擎，需在后缀前面加上 `.blade`
 @endsection
 ```
 
-### 2. 配置 BrowserSync
+## 2. 配置 BrowserSync
 
 > Browsersync能让浏览器实时、快速响应您的文件更改（html、js、css、sass、less等）并自动刷新页面。更重要的是 Browsersync可以同时在PC、平板、手机等设备下进项调试。
 
 因此为了更快更方便的开发网页，我们可以用上 BrowserSync，laravel框架也有集成这个工具。
 
-#### 1. 先进入laravel项目根目录 安装 browser-sync
+### 1. 先进入laravel项目根目录 安装 browser-sync
 
 ```
 npm install --save-dev browser-sync browser-sync-webpack-plugin
 ```
 
-#### 2. 配置 webpack.mix.js
+### 2. 配置 webpack.mix.js
 
 ```
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
@@ -109,13 +111,13 @@ mix.webpackConfig({
 });
 ```
 
-#### 3. 运行
+### 3. 运行
 
 ```
 npm run watch
 ```
 
-#### 4. 修改 blade
+### 4. 修改 blade
 
 ![添加代码](laravel-use.png)
 
@@ -127,11 +129,137 @@ Terminal有提示在 页面中添加如下代码
 //]]></script>
 ```
 
+## 3. 解决 跨站请求伪造 (CSRF) 
+
+在获取菜单列表的时候，ajax提交post请求，突然返回个419的错误，之前从没有碰到过，查了下，原来是laravel的 CSRF的原因。
+
+> CSRF（Cross-site request forgery跨站请求伪造，也被称为“One Click Attack”或者Session Riding，通常缩写为CSRF或者XSRF，是一种对网站的恶意利用。尽管听起来像跨站脚本（XSS），但它与XSS非常不同，并且攻击方式几乎相左。XSS利用站点内的信任用户，而CSRF则通过伪装来自受信任用户的请求来利用受信任的网站。与XSS攻击相比，CSRF攻击往往不大流行（因此对其进行防范的资源也相当稀少）和难以防范，所以被认为比XSS更具危险性。
+> 
+> Laravel 会自动为每个活跃用户的会话生成一个 CSRF「令牌」。该令牌用于验证经过身份验证的用户是否是向应用程序发出请求的用户。
+
+任何情况下当你在应用程序中定义 HTML 表单时，都应该在表单中包含一个隐藏的 CSRF 令牌字段，以便 CSRF 保护中间件可以验证该请求。可以使用辅助函数 csrf_field 来生成令牌字段：
+
+
+### 1. 准备提交的表单
+
+使用 `csrf_field()` 来生成令牌字段，提交的时候一并提交上去。
+
+```php
+<form method="POST" action="/profile">
+    {{ csrf_field() }}
+    ...
+</form>
+```
+
+他会生成如下的标签
+
+```
+<input type="hidden" name="_token" value="r1rvi8vZSHorERVAERKdm9DcyrWV8U1G9TIR3HH4">
+```
+
+------
+
+如果是ajax提交的，有一种做法，在页面上某个角落加入 `{{ csrf_field() }}`，然后获取input里的value值，再传上去。
+
+```
+var token = $('input[name=_token]').val();
+
+$.ajax({
+    url: "{{url('menu/getDishes')}}",
+    type: 'POST',
+    dataType: 'json',
+    data: {
+      _token: token,
+    },
+    success: function(data){
+        console.log(data);
+    }
+});
+```
+
+### 2. 把url加入CSRF的白名单
+
+你可以把这类路由放到 `routes/web.php` 外
+
+或者 你也可以通过将这类 URI 添加到 `VerifyCsrfToken` 中间件中的 `$except` 属性来排除对这类路由的 `CSRF` 保护
+
+```php
+// app/Http/Controller/Middleware/VerifyCsrfToken.php
+<?php
+namespace App\Http\Middleware;
+
+use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as Middleware;
+use Closure;
+
+class VerifyCsrfToken extends Middleware
+{
+    /**
+     * The URIs that should be excluded from CSRF verification.
+     *
+     * @var array
+     */
+    protected $except = [
+        'menu/*',
+        'menu',
+    ];
+}
+```
+
+url路由写法
+
+```php
+// routes/web.php
+
+// 只接受 post 请求
+Route::post('/menu/getDishes', 'MenuController@menu_dishes');
+```
+
+## blade添加静态资源和url
+
+### 引入静态资源 `asset()`
+
+静态资源就放在 `public/` 下
+
+```
+<script src="{{asset('js/jquery.min.js')}}"></script>
+```
+
+![public/js/jquery.min.js](laravel-use2.png)
+
+### 请求的url地址 `url()`
+
+在 `{{}}` 里使用 `url()`方法写上 `routes` 里写的路由就行了，
+
+```
+$.ajax({
+    url: "{{url('menu')}}",
+    type: 'GET',
+    dataType: 'json',
+    success: function(data){
+        console.log(data);
+    }
+});
+```
+
+==**特别注意：**==
+
+> ==blade的 `{{}}` 语法会自动调用 `PHP htmlspecialchars` 函数来避免 XSS 攻击。==
+
+如果请求来的是html格式的内容，那html标签会被转义，此时需要显示未转义的数据。
+
+```
+Hello, {!! $html !!}
+```
+
+> ==处理用户输入的数据时要非常小心。在显示用户提供的数据时，你应该始终使用转义的 {{ }} 语法来防止 XSS 攻击。==
 
 ## 参考
 
-> 本文部分摘录自以下博客，特别写出来，以表感谢。
+> 本文部分摘录自以下博客或文档，特别写出来，以表感谢。
 
+* [Laravel 5.5 中文文档](https://d.laravel-china.org/docs/5.5/)
 * [Laravel5.4 中使用 browsync 监控 CSS 并自动刷新页面](https://laravel-china.org/topics/3778/laravel54-uses-browsync-to-monitor-css-and-automatically-refresh-the-page#5-打开浏览器访问即可)
+
+
 
 
