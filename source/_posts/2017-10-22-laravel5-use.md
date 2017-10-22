@@ -81,4 +81,57 @@ laravel自带有blade模板引擎，需在后缀前面加上 `.blade`
 @endsection
 ```
 
+### 2. 配置 BrowserSync
+
+> Browsersync能让浏览器实时、快速响应您的文件更改（html、js、css、sass、less等）并自动刷新页面。更重要的是 Browsersync可以同时在PC、平板、手机等设备下进项调试。
+
+因此为了更快更方便的开发网页，我们可以用上 BrowserSync，laravel框架也有集成这个工具。
+
+#### 1. 先进入laravel项目根目录 安装 browser-sync
+
+```
+npm install --save-dev browser-sync browser-sync-webpack-plugin
+```
+
+#### 2. 配置 webpack.mix.js
+
+```
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+
+mix.webpackConfig({
+    plugins: [
+        new BrowserSyncPlugin({
+            files: [
+                'resources/views/**/*.php',
+            ]
+        }, { reload: false})
+    ]
+});
+```
+
+#### 3. 运行
+
+```
+npm run watch
+```
+
+#### 4. 修改 blade
+
+![添加代码](laravel-use.png)
+
+Terminal有提示在 页面中添加如下代码
+
+```terminal
+<script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.13'><\/script>".replace("HOST", location.hostname));
+//]]></script>
+```
+
+
+## 参考
+
+> 本文部分摘录自以下博客，特别写出来，以表感谢。
+
+* [Laravel5.4 中使用 browsync 监控 CSS 并自动刷新页面](https://laravel-china.org/topics/3778/laravel54-uses-browsync-to-monitor-css-and-automatically-refresh-the-page#5-打开浏览器访问即可)
+
 
