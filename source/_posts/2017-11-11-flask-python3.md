@@ -2,7 +2,6 @@
 title: 安装python3版本的flask
 date: 2017-11-11 23:09:52
 category: Learn
-toc: true
 tags: 
     - flask
     - python
