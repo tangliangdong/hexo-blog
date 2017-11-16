@@ -109,6 +109,10 @@ export class HomePage {
 }
 ```
 
+ * this.http.request()
+ * this.http.get()
+ * this.http.post()
+
 ------
 ##### 但这样会造成如下跨域的问题
 
@@ -174,4 +178,18 @@ export class HomePage {
   }
 }
 ```
+
+### Promise写法
+
+> 如果想在网络错误的情况下也提供解决的方式
+
+```js
+this.http.post('http://localhost:9090/app/login?'+
+    'account='+this.User.username +
+    '&passwd='+this.User.passwd)
+  .toPromise()
+  .then(res => { this.listData = res.json(); })
+  .catch(err => { console.error(err) }); // 错误的时候返回的
+```
+
 
