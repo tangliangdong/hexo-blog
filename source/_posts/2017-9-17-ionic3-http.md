@@ -184,12 +184,37 @@ export class HomePage {
 > 如果想在网络错误的情况下也提供解决的方式
 
 ```js
+var headers = new Headers();
+    headers.append("Accept", 'application/json');
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+let options = new RequestOptions({ headers: headers });
+
 this.http.post('http://localhost:9090/app/login?'+
     'account='+this.User.username +
-    '&passwd='+this.User.passwd)
+    '&passwd='+this.User.passwd,)
   .toPromise()
   .then(res => { this.listData = res.json(); })
   .catch(err => { console.error(err) }); // 错误的时候返回的
 ```
+
+`this.http.post(URL,postParams,headerOptions)` 接收三个参数，也可以只传两个参数 `(URL,headerOptions)`，想要传输的参数就拼在url里。如果想通过 `postParams`传参，则需要这么写
+
+```js
+let postParams = {
+    phone: 18362132311,
+    password: 123456,
+}
+```
+
+但是这样的参数是会出现在 `RequestPayload` 里的，python 后台无法通过 `request.form['phone']` 来获取参数，因此只能通过参数跟在 **url** 里的形式，如
+
+```
+let URL = 'http://localhost:5000/app/login?'
+    + 'phone='+this.User.phone
+    + '&password='+this.User.password
+```
+
+
+有个疑问，明明这里指定了 `Content-Type` 为 `application/x-www-form-urlencoded` 但是实际请求的时候却是无效的，显示的依旧是 `text/html; charset=utf-8`。
 
 
