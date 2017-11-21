@@ -47,9 +47,9 @@ tags:
 
 创建好的时候记得保存 **AccessKeySecret**，之后就没机会再查看了。
 
-#### 整合到Laravel框架
+### 整合到Laravel框架
 
-##### 手动整合
+#### 手动整合
 
 👉👉👉 [SDK及DEMO下载](https://help.aliyun.com/document_detail/55359.html?spm=5176.doc55491.2.8.evWxXE)
 
@@ -84,7 +84,7 @@ composer dumpautoload
 
 真正做的时候也不是这样一帆风顺的，官方的sdk和demo本身也有些问题。
 
-###### Invalid argument supplied for foreach()
+##### Invalid argument supplied for foreach()
 
 ![](11.png)
 
@@ -100,7 +100,7 @@ EndpointConfig::load();
 
 ![](12.png)
 
-###### Can not find endpoint to access.
+##### Can not find endpoint to access.
 
 天真的以为问题都解决了，结果马上出来另外一个问题。
 
@@ -122,10 +122,7 @@ $domain = 'dysmsapi.aliyuncs.com';
 
 ![](16.png)
 
-
-
-
-##### 具体实现
+#### 具体实现
 
 我就把 **smsDemo** 里的几个方法都移到 `SmsController` 里了，
 
@@ -277,7 +274,6 @@ class SmsController extends Controller{
         return $acsResponse;
     }
 }
-
 ```
 
 
