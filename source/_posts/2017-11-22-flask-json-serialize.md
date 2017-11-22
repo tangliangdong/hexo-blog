@@ -1,6 +1,7 @@
 ---
 title: flask对象列表序列化
 date: 2017-11-22 18:25:09
+category: Learn
 toc: true
 tags: 
     - flask
