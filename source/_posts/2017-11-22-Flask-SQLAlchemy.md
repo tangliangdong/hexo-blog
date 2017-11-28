@@ -150,6 +150,10 @@ def insert(self, indent):
 ```py
 def delete(self,indent):
     db.session.delete(indent)
+
+def deleteById(id):
+    db.session.query(Indent).filter(Indent.id == id).delete()
+    db.session.commit()
 ```
 
 # 修改
