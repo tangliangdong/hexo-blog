@@ -148,8 +148,10 @@ def insert(self, indent):
 # 删除数据
 
 ```py
-def delete(self,indent):
+def delete(id):
+    db.session.query.filter(Indent.id==id).first()
     db.session.delete(indent)
+    db.session.commit()
 
 def deleteById(id):
     db.session.query(Indent).filter(Indent.id == id).delete()
