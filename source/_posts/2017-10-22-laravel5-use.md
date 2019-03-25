@@ -2,9 +2,9 @@
 title: laravel5.5 使用注意点
 date: 2017-10-22 13:14:10
 category: Learn
-description 'blade模板使用'
+description: 'blade模板使用'
 toc: true
-tags: 
+tags:
     - laravel
 ---
 
@@ -26,21 +26,21 @@ laravel自带有blade模板引擎，需在后缀前面加上 `.blade`
         @section('header')
             <div class="footer">这是头部</div>
         @show
-        
+
         <div class="container">
             <!--  @yield功能 类似占位符 -->
             @yield('content')
         </div>
-        
+
         @section('footer')
             <div class="footer">这是尾部</div>
         @show
     </body>
 </html>
 ```
-        
+
 再新建一个模板 继承该布局
-        
+
 ```php
 <!-- 文件保存于 resources/views/layouts/index.blade.php -->
 <html>
@@ -52,15 +52,15 @@ laravel自带有blade模板引擎，需在后缀前面加上 `.blade`
     <body>
         <!-- 为子视图指定应该 「继承」 的布局 -->
         @extends('layouts.app')
-        
+
         <!-- 继承 Blade 布局的视图可使用 @section 命令将内容注入于布局的 @section 中 -->
         @section('header')
-        
+
         <!-- 主」布局中使用 @yield 的地方会显示这些子视图中的 @section 间的内容 -->
         @section('content')
             Hello world
         @endsection
-        
+
         @section('footer')
     </body>
 </html>
@@ -129,12 +129,12 @@ Terminal有提示在 页面中添加如下代码
 //]]></script>
 ```
 
-## 3. 解决 跨站请求伪造 (CSRF) 
+## 3. 解决 跨站请求伪造 (CSRF)
 
 在获取菜单列表的时候，ajax提交post请求，突然返回个419的错误，之前从没有碰到过，查了下，原来是laravel的 CSRF的原因。
 
 > CSRF（Cross-site request forgery跨站请求伪造，也被称为“One Click Attack”或者Session Riding，通常缩写为CSRF或者XSRF，是一种对网站的恶意利用。尽管听起来像跨站脚本（XSS），但它与XSS非常不同，并且攻击方式几乎相左。XSS利用站点内的信任用户，而CSRF则通过伪装来自受信任用户的请求来利用受信任的网站。与XSS攻击相比，CSRF攻击往往不大流行（因此对其进行防范的资源也相当稀少）和难以防范，所以被认为比XSS更具危险性。
-> 
+>
 > Laravel 会自动为每个活跃用户的会话生成一个 CSRF「令牌」。该令牌用于验证经过身份验证的用户是否是向应用程序发出请求的用户。
 
 任何情况下当你在应用程序中定义 HTML 表单时，都应该在表单中包含一个隐藏的 CSRF 令牌字段，以便 CSRF 保护中间件可以验证该请求。可以使用辅助函数 csrf_field 来生成令牌字段：
@@ -259,7 +259,3 @@ Hello, {!! $html !!}
 
 * [Laravel 5.5 中文文档](https://d.laravel-china.org/docs/5.5/)
 * [Laravel5.4 中使用 browsync 监控 CSS 并自动刷新页面](https://laravel-china.org/topics/3778/laravel54-uses-browsync-to-monitor-css-and-automatically-refresh-the-page#5-打开浏览器访问即可)
-
-
-
-

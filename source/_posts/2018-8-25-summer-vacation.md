@@ -3,8 +3,11 @@ title: 暑假
 date: 2018-08-25 22:12:58
 category: feeling
 toc: true
-tags: 
+tags:
     - 考研
+password: read
+abstract: Welcome to my blog, enter password to read.
+message: Welcome to my blog, enter password to read.
 ---
 
 大学的最后一个暑假也快过去了，没有放假没有出游，有的就是看书。
@@ -13,11 +16,11 @@ tags:
 
 最初虽然也会失败几次，但是每次从中总结经验教训，下次就知道怎样才能做好，（认识->实践->认识->实践 😆😆😆）
 
-<img src="2.jpg" width="50%">
+<img src="2.png" width="50%" />
 
-<img src="3.jpg" width="50%">
+<img src="3.png" width="50%" />
 
-<img src="4.jpg" width="50%">
+<img src="4.png" width="50%" />
 
 
 -------
@@ -49,5 +52,4 @@ tags:
 《资本论》
 &nbsp;&nbsp;&nbsp; ...
 
-<img src="1.jpg" width="50%">
-
+<img src="1.png" width="50%">
