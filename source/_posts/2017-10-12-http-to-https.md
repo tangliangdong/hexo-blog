@@ -101,7 +101,7 @@ yum install mod_ssl
 
 我们先把之前下载的证书上传到服务器apache根目录下 `/etc/httpd/cert/` （新建cert文件夹）
 
-## 配置 ssl.conf 
+## 配置 ssl.conf
 
 `/etc/httpd/conf.d/ssl.conf`
 
@@ -227,29 +227,12 @@ RewriteEngine是总开关，用来控制是否启用url rewrite。
 
 RewriteCond 是过滤条件，当URL满足RewriteCond配置的条件的情况，就会执行RewriteCond下面紧邻的RewriteRule语句
 
-RewriteCond %{待测试项目} 正则表达式条件
+RewriteCond `%{待测试项目}` 正则表达式条件
 
 `%{HTTP_HOST}`👉👉👉[可用的变量列表](http://httpd.apache.org/docs/current/expr.html#vars)
 
-### RewriteRule 
+### RewriteRule
 
 > 定义重写引擎的规则
 
 详细请参见👉👉👉[Apache模块mod_rewrite](http://httpd.apache.org/docs/current/mod/mod_rewrite.html)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

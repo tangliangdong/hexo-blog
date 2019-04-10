@@ -159,7 +159,7 @@ Terminal有提示在 页面中添加如下代码
 
 ------
 
-如果是ajax提交的，有一种做法，在页面上某个角落加入 `{{ csrf_field() }}`，然后获取input里的value值，再传上去。
+如果是ajax提交的，有一种做法，在页面上某个角落加入 `{% raw %}{{ csrf_field() }}{% endraw %}`，然后获取input里的value值，再传上去。
 
 ```
 var token = $('input[name=_token]').val();
@@ -228,34 +228,4 @@ Route::post('/menu/getDishes', 'MenuController@menu_dishes');
 
 ### 请求的url地址 `url()`
 
-在 `{{}}` 里使用 `url()`方法写上 `routes` 里写的路由就行了，
-
-```
-$.ajax({
-    url: "{{url('menu')}}",
-    type: 'GET',
-    dataType: 'json',
-    success: function(data){
-        console.log(data);
-    }
-});
-```
-
-==**特别注意：**==
-
-> ==blade的 `{{}}` 语法会自动调用 `PHP htmlspecialchars` 函数来避免 XSS 攻击。==
-
-如果请求来的是html格式的内容，那html标签会被转义，此时需要显示未转义的数据。
-
-```
-Hello, {!! $html !!}
-```
-
-> ==处理用户输入的数据时要非常小心。在显示用户提供的数据时，你应该始终使用转义的 {{ }} 语法来防止 XSS 攻击。==
-
-## 参考
-
-> 本文部分摘录自以下博客或文档，特别写出来，以表感谢。
-
-* [Laravel 5.5 中文文档](https://d.laravel-china.org/docs/5.5/)
-* [Laravel5.4 中使用 browsync 监控 CSS 并自动刷新页面](https://laravel-china.org/topics/3778/laravel54-uses-browsync-to-monitor-css-and-automatically-refresh-the-page#5-打开浏览器访问即可)
+在 `{% raw %}{{}}{% endraw %}` 里使用 `url()`方法写上 `routes` 里写的路由就行了，
