@@ -116,7 +116,7 @@ AccountApi accountApi = applicationContext.getBean(AccountApi.class);
 
 ----
 
-
+### 部署到Tomcat启动应用，获取service的方法
 
 ### 将 WebSocketHandshakeInterceptor 添加到spring的应用上下文中
 
