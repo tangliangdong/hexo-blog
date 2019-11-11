@@ -36,6 +36,6 @@ docker run --name redis -d -p 6379:6379 redis
 
 启动redis实例，指定**端口**和**密码**：
 ```shell
-docker run --name redis -d -p 6379:6379 redis --requirepass "admin"
+docker run --name redis -d -p 6379:6379 redis --requirepass "123456"
 ```
 
