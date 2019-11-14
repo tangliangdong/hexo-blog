@@ -28,7 +28,7 @@ start_x=0
 hdmi_drive=1
 hdmi_group=2
 hdmi_mode=87
-hdmi_cvt=2560 1440 60
+hdmi_cvt=2560 1440 48
 
 // 下面可加不加
 framebuffer_width=2560
@@ -37,7 +37,7 @@ max_framebuffer_width=2560
 max_framebuffer_height=1440
 ```
 
-
+>  最重要的就是hdmi_cvt的设置，其中48代表刷新频率，1440×2560的屏幕只支持48hz的如果设置其他的就不行 
 
 ![hdmi_cvt配置](1.png)
 
@@ -50,4 +50,6 @@ max_framebuffer_height=1440
 ### 树莓派开启ssh
 
 在电脑上读取装有 *Raspbian* 系统的 **tf**卡后，在root盘目录下新建 `ssh`文件（**不带后缀名**）。
+
+
 
