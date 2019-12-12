@@ -9,6 +9,8 @@ tags:
 
 基于SpringBoot 2.x的Spring Cloud服务注册与发现
 
+[github项目地址](https://github.com/tangliangdong/springboot-integration)
+
 <!-- more -->
 
 # 创建服务注册中心
@@ -283,3 +285,4 @@ eureka:
 启动项目成功后，即可在服务中心 **DS Replicas -> Instances currently registered with Eureka** 下发现此服务提供者了。
 
 ![启动服务后](4.png)
+
