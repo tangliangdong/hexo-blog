@@ -162,3 +162,8 @@ eureka:
 
 ![服务注册中心](2.png)
 
+
+
+---
+
+参考自 [[Spring Cloud（四） 服务提供者 Eureka + 服务消费者 Feign](https://segmentfault.com/a/1190000012312123)](https://segmentfault.com/a/1190000012312123)
