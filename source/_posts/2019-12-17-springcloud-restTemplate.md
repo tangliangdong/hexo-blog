@@ -26,6 +26,8 @@ tags:
 
 还要进行中文乱码的配置。
 
+`@LoadBalanced` 声明 该 restTemplate 开启负载均衡
+
 ```java
 package com.example.springclient.configuration;
 
