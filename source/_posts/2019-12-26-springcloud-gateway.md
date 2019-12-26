@@ -128,3 +128,12 @@ eureka:
 
 - **重点**是需要设置 filters 的 StripPrefix=1，此处配置去掉1个路径前缀。这样访问这个`localhost:9010/SERVER-01/open/index `就相当于访问SERVER-01上的 `/open/index` 路径
 
+
+
+---
+
+参考自 
+
+- [Spring Cloud gateway 网关服务 一](https://zhuanlan.zhihu.com/p/90116218)
+- [Spring Cloud（十三）：Spring Cloud Gateway（路由）](https://windmt.com/2018/05/07/spring-cloud-13-spring-cloud-gateway-router/)
+
