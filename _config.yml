@@ -113,3 +113,10 @@ live2d:
     show: false 
     react: 
       opacity: 0.7
+
+# 站点及文章字数统计
+symbols_count_time:
+  symbols: true # 统计单篇文章字数
+  time: false # 取消估算单篇文章阅读时间
+  total_symbols: true # 统计站点总字数
+  total_time: false # 取消估算站点总阅读时间
