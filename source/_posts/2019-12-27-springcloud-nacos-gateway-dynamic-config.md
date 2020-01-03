@@ -21,7 +21,45 @@ Spring Cloud Gateway的官方文档并没有讲如何动态配置，查看 Sprin
 
 pom.xml
 
-```xml
+```java /com/gonghui/diff/
+public Class HelloWorldClass(){
+    public static void main(String[] args){
+        System.Out.printl("Hello World");
+    }
+}
+```
+
+```java :你好 linenos:false start:20 mark:0
+public Class HelloWorldClass(){
+    -public static void main(String[] args){
+    +public static void main(String[] args){
+        System.Out.printl("Hello World");
+    }
+}
+```
+
+{% codeblock 'hello world' lang:java start:20 mark:1,2-3 linenos:false %}
+public Class HelloWorldClass(){
+    -public static void main(String[] args){
+    +public static void main(String[] args){
+        System.Out.printl("Hello World");
+    }
+}
+{% endcodeblock %}
+
+
+```java line_number:false
+public Class HelloWorldClass(){
+    -public static void main(String[] args){
+    +public static void main(String[] args){
+        System.Out.printl("Hello World");
+    }
+}
+```
+
+
+
+```xml 
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
