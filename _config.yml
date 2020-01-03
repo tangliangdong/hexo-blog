@@ -121,3 +121,9 @@ symbols_count_time:
   total_symbols: true # 统计站点总字数
   total_time: false # 取消估算站点总阅读时间
   exclude_codeblock: false
+
+search:
+  path: search.xml
+  field: post # 指定搜索范围，可选 post | page | all
+  format: html # 指定页面内容形式，可选 html | raw (Markdown) | excerpt | more
+  limit: 10000
