@@ -8,6 +8,8 @@ tags:
 
 向Github提交代码的时候，发现自己的Contributions 并没有增加，原来是commit的邮件地址必须与github相一致，这也是为什么我的Commit没有被记入Contributions 和不显示头像的原因。
 
+<!-- more -->
+
 我们进入到git仓库中，使用 `git log` 查看每次提交的日志，就会发现用户名和邮箱并没有和Github上保持一致。我们先将commit 时的用户名和邮箱地址改为与Github注册时的一致，防止以后再出现这样的问题，我们可以通过如下的命令：
 
 ```bash
