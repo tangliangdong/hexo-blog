@@ -145,6 +145,8 @@ public class MybatisConfiguration {
 
 
 
-{% note primary %}
-文本内容 (支持行内标签)
-{% endnote %}
+## 参考链接
+
+- [Mybatis Interceptor 拦截器](https://segmentfault.com/a/1190000017393523)
+
+- [关于属性描述符PropertyDescriptor](https://unclecatmyself.github.io/2019/01/19/propertyDescriptor/)
