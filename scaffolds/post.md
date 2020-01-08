@@ -1,7 +1,7 @@
 ---
 title: {{ title }}
 date: {{ date }}
-tags:
+toc: true
 categories: 
-related_posts: true
+tags:
 ---
