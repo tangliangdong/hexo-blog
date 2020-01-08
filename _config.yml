@@ -127,3 +127,16 @@ search:
   field: post # 指定搜索范围，可选 post | page | all
   format: html # 指定页面内容形式，可选 html | raw (Markdown) | excerpt | more
   limit: 10000
+
+douban:
+  user: 131995663
+  builtin: false
+  book:
+    title: '我读过的书'
+    # quote: 'This is my book quote'
+  movie:
+    title: '我的电影'
+  game:
+    title: '我的游戏'
+    quote: '玩游戏也要与时俱进'
+  timeout: 10000 

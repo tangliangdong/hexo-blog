@@ -1,6 +1,5 @@
 ---
 title: springboot mybatis拦截器interceptor配置
-related_posts: true
 date: 2020-01-07 10:43:41
 categories: Learn
 tags: 
@@ -48,7 +47,7 @@ public enum SqlCommandType {
 
 毕竟新增和修改的场景，有些参数是有区别的，比如**创建时间**和**更新时间**，`update` 时是无需兼顾创建时间字段的。
 
-```java
+```java 拦截器中获取sql命令类型和参数
 // 1. 获取MappedStatement实例, 并获取当前SQL命令类型
 MappedStatement ms = (MappedStatement) invocation.getArgs()[0];
 SqlCommandType commandType = ms.getSqlCommandType();
@@ -146,3 +145,8 @@ public class MybatisConfiguration {
 
 
 
+## 参考链接
+
+- [Mybatis Interceptor 拦截器](https://segmentfault.com/a/1190000017393523)
+
+- [关于属性描述符PropertyDescriptor](https://unclecatmyself.github.io/2019/01/19/propertyDescriptor/)

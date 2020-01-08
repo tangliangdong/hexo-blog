@@ -15,51 +15,11 @@ Spring Cloud Gateway作为所有请求流量的入口，在实际生产环境中
 
 <!-- more -->
 
-Spring Cloud Gateway的官方文档并没有讲如何动态配置，查看 Spring Cloud Gateway的源码，发现`在org.springframework.cloud.gateway.actuate.GatewayControllerEndpoint`类中提供了动态配置的Rest接口，但是`需要开启Gateway的端点`，而且提供的功能不是很强大。通过参考和GatewayControllerEndpoint相关的代码，可以自己编码实际动态路由配置。
+Spring Cloud Gateway的官方文档并没有讲如何动态配置，查看 Spring Cloud Gateway的源码，发现`在org.springframework.cloud.gateway.actuate.GatewayControllerEndpoint`类中提供了动态配置的Rest接口，但是`需要开启Gateway的端点`，而且提供的功能不是很强大。通过参考和 `GatewayControllerEndpoint` 相关的代码，可以自己编码实际动态路由配置。
 
 ## 用IDE新建Maven工程
 
-pom.xml
-
-```java /com/gonghui/diff/
-public Class HelloWorldClass(){
-    public static void main(String[] args){
-        System.Out.printl("Hello World");
-    }
-}
-```
-
-```java :你好 linenos:false start:20 mark:0
-public Class HelloWorldClass(){
-    -public static void main(String[] args){
-    +public static void main(String[] args){
-        System.Out.printl("Hello World");
-    }
-}
-```
-
-{% codeblock 'hello world' lang:java start:20 mark:1,2-3 linenos:false %}
-public Class HelloWorldClass(){
-    -public static void main(String[] args){
-    +public static void main(String[] args){
-        System.Out.printl("Hello World");
-    }
-}
-{% endcodeblock %}
-
-
-```java line_number:false
-public Class HelloWorldClass(){
-    -public static void main(String[] args){
-    +public static void main(String[] args){
-        System.Out.printl("Hello World");
-    }
-}
-```
-
-
-
-```xml 
+```xml pom.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
