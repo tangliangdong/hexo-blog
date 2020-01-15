@@ -1,5 +1,5 @@
 ---
-title: 2020-1-10-file-descriptor
+title: 文件描述符 与 /dev/null
 toc: true
 date: 2020-01-10 10:55:21
 categories: 服务器
