@@ -111,7 +111,7 @@ seata 所需的三个数据库，对应的sql的文件在根目录下的 `/scrip
 
 ## 配置微服务 Account-Server 
 
- account-server、order-server和storage-server 差不多，就只展示一个的配置，
+ **account-server**、**order-server** 和 **storage-server** 差不多，就只展示一个的配置，
 
 ```xml pom.xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -224,7 +224,9 @@ seata 所需的三个数据库，对应的sql的文件在根目录下的 `/scrip
 </project>
 ```
 
-### 修改 application.yml 文件，自定义事务组的名称 `tx-service-group: account-service-group`
+### 修改 application.yml 文件
+
+自定义事务组的名称 `tx-service-group: account-service-group`
 
 ```yaml application.yml
 server:
@@ -258,7 +260,9 @@ logging:
           autoconfigure: ERROR
 ```
 
-### 添加并修改 registry.conf 配置文件，主要是将注册中心改为 nacos
+### 添加并修改 registry.conf 配置文件
+
+主要是将注册中心改为 nacos
 
 ```bash /src/main/resources/registry.conf
 registry {
@@ -283,13 +287,14 @@ config {
 }
 ```
 
-### 添加并修改 file.conf 配置文件，主要是修改自定义事务组名称
+### 添加并修改 file.conf 配置文件，
+
+主要是修改自定义事务组名称
 
 ```bash /src/main/resources/file.conf
 service {
   #transaction service group mapping
-  #vgroup_mapping.tx-service-group = "default"
-  vgroup_mapping.order-service-group="default"
+  vgroup_mapping.account-service-group="default"
   # only support when registry.type=file, please don't set multiple addresses
   default.grouplist = "127.0.0.1:8091"
   # disable seata
@@ -298,7 +303,7 @@ service {
 ```
 
 {% note danger %}
-vgroup_mapping.order-service-group="default" 必须配置，不然会一直查找这个配置，找不到控制台会报ERROR
+vgroup_mapping.account-service-group="default" 必须配置，不然会一直查找这个配置，找不到控制台会报ERROR，同一个事务组的名称必须一致，在这里所有微服务的事务组名称必须都是 `account-service-group`。
 
 其他配置可以不写，找不到会使用默认配置
 {% endnote %}
