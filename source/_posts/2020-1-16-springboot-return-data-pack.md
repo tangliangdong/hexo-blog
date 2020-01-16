@@ -178,7 +178,37 @@ public class WebConfigurer implements WebMvcConfigurer {
 }
 ```
 
+### 效果
 
+```java com.xiaotang.springaccount.dto.UserInfo
+@Getter
+@Setter
+public class UserInfo {
+    private String username;
+    private String password;
+    private Integer age;
+
+    private List<String> list;
+    private Boolean sex;
+}
+```
+
+
+
+```java com.xiaotang.springaccount.controller.LoginController
+@PostMapping("testobject")
+public UserInfo testobject(){
+    UserInfo userInfo = new UserInfo();
+    userInfo.setUsername("hello world");
+    return userInfo;
+}
+```
+
+返回值：
+
+![返回值](4.png)
+
+list, string, boolean 类型都是非null了。
 
 ## 更多的配置接口 WebMvcConfigurer
 
