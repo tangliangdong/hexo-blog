@@ -41,7 +41,7 @@ docker image ls mysql
 ### 4. 生成并运行mysql容器
 
 ```shell
-docker run --name mysql5.7 -e MYSQL_ROOT_PASSWORD=123456 -d -i -p 3306:3306 --restart=always  mysql:5.7
+docker run --name mysql5.7 -e MYSQL_ROOT_PASSWORD=123456 -d -i -p 3306:3306 --restart=always  mysql:5.7 mysqld --lower_case_table_names=1
 ```
 
 ![](5.png)
@@ -58,16 +58,35 @@ docker run --name mysql5.7 -e MYSQL_ROOT_PASSWORD=123456 -d -i -p 3306:3306 --re
 - -i  以交互模式运行容器
 - -p  进行端口映射，格式为`主机(宿主)端口:容器端口`
 - --restart=always  当docker重启时，该容器自动重启
+- --lower_case_table_names=1  数据库表名不区分大小写，在window下是不区分大小写的， 可能在本地运行是OK的，但是一旦到测试环境就不行了。
+
+
+
+{% note danger %}
+如果在创建容器的时候有些属性未设置，比如 `lower_case_table_names`，`MYSQL_ROOT_PASSWORD`, 可以去到
+
+`/var/lib/docker/containers/<container id>` 文件目录下，可以修改下面两个文件的参数
+
+- hostconfig.json
+- config.v2.json
+
+然后重启 docker，其中的参数才会生效，只是重启容器是无效的。
+
+{% endnote %}
 
 
 
 ### 进入mysql容器
 
 ```shell
-docker exec -ti mysql bash
+docker exec -ti mysql /bin/bash
 ```
 
 ![](6.png)
+
+
+
+> 很多参数的修改都不用进入到容器中，而是在创建容器的时候就赋予了的。
 
 
 
