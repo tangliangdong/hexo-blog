@@ -2,7 +2,6 @@
 layout:     post
 title:      "浅谈响应式"
 date:       2016-08-10 11:00:00
-description: ""
 category:   Learn
 tags:
     - 响应式

@@ -130,7 +130,7 @@ search:
 
 douban:
   user: 131995663
-  builtin: false
+  builtin: true
   book:
     title: '我读过的书'
     # quote: 'This is my book quote'
