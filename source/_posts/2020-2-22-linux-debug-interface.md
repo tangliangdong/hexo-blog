@@ -61,4 +61,6 @@ curl localhost:8088/upload/file -F "file=@/mnt/1463739554391.jpg" -F "fileType=2
 
 
 
+---
+
 参考自 [curl 模拟 GET\POST 请求，以及 curl post 上传文件](https://blog.csdn.net/FungLeo/article/details/80703365) 
