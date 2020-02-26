@@ -13,7 +13,7 @@ tags:
 sudo rpm -ivh https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
 ```
 
-
+<!-- more -->
 
 ### 2. 确认mysql仓库是否添加成功
 

@@ -21,7 +21,7 @@ curl http://localhost:8088/project/getProjectList?pageNum=1&pageSize=10
 curl http://localhost:8088/project/getProjectList?pageNum=1&pageSize=10 -v
 ```
 
-
+<!-- more -->
 
 ## curl POST请求
 

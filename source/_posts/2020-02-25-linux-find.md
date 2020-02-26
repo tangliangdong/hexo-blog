@@ -23,7 +23,7 @@ find / -name nginx
 find / -iname nginx
 ```
 
-
+<!-- more -->
 
 ### 仅查找目录或文件
 
