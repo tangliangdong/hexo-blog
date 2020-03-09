@@ -2,7 +2,7 @@
 title: docker 修改创建容器时的参数
 toc: true
 date: 2020-02-19 14:59:52
-categories: docker
+categories: 后端
 tags:
     - docker
 ---
@@ -11,7 +11,11 @@ tags:
 
 每次docker 创建容器的时候总是很快就建好了，但是之后会发现总是少写了参数，比如mysql的 `MYSQL_ROOT_PASSWORD`、tomcat和mysql的 `--link` 。但是删了容器重新来过也麻烦。但是直接进入到容器里吧，连 `vim`、`vi` 的编辑器都没有。但是我们还可以通过修改容器配置文件的方法来达到我们的目的。
 
+<<<<<<< HEAD
 <!-- more-->
+=======
+<!-- more -->
+>>>>>>> d3c8f929fa1bffaafb4080236a5259cdcff6f1a4
 
 ### 方法一
 
