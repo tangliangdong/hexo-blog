@@ -401,7 +401,11 @@ public class AccountService {
 }
 ```
 
+<<<<<<< HEAD
 给每个库都创建创建 undo_log 表（日志回滚表 ）} ，文件在 **seata/script/client/at/db/mysql.sql**
+=======
+给每个库都创建undo_log 表（日志回滚表 ） ，文件在 **seata/script/client/at/db/mysql.sql**
+>>>>>>> d8fb6bfffba2c472d2766ddf2a4e435dd3786beb
 
 ```sql
 CREATE TABLE IF NOT EXISTS `undo_log`(
