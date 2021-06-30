@@ -401,7 +401,7 @@ public class AccountService {
 }
 ```
 
-给每个库都创建创建 {% label default@undo_log 表（日志回滚表 ）%} ，文件在 **seata/script/client/at/db/mysql.sql**
+给每个库都创建创建 undo_log 表（日志回滚表 ）} ，文件在 **seata/script/client/at/db/mysql.sql**
 
 ```sql
 CREATE TABLE IF NOT EXISTS `undo_log`(
@@ -424,7 +424,7 @@ CREATE TABLE IF NOT EXISTS `undo_log`(
 
 ##  启动服务功能演示
 
-{% tabs 选项卡 2 %}
+{% tabs 选项卡 %}
 
 <!-- tab seata-server -->
 ![seata-server](5-0.png)
@@ -440,6 +440,7 @@ CREATE TABLE IF NOT EXISTS `undo_log`(
 <!-- tab storage-server -->
 ![storage-server](5-3.png)
 <!-- endtab -->
+
 {% endtabs %}
 
 成功注册到seata
@@ -458,8 +459,10 @@ CREATE TABLE IF NOT EXISTS `undo_log`(
 <!-- tab storage-server -->
 ![storage-server](6-2.png)
 <!-- endtab -->
+
 {% endtabs %}
 
 ## 参考链接
 
 - [Spring Alibaba Cloud使用Seata实现分布式事务，Nacos作为配置中心(一)](https://juejin.im/post/5ddddd75e51d45330c6aec6f)
+
